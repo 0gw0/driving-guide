@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Progress
+{% endblock %}
+
+{% block main %}
+    <div><h2>Driving lisence progress!</div></h2>
+    <div class="progress" style="height: 20px;">
+        <div class="progress-bar" role="progressbar" style="width: {{ percentage }}%;" aria-valuenow="{{ percentage }}" aria-valuemin="0" aria-valuemax="100">{{ percentage }}%</div>
+    </div>
+    <hr>
+    <br>
+    <div class="alert alert-primary" role="alert">
+        check the boxes of the steps you have completed and click update!
+    </div>
+    <br>
+    <form action="/" method="post">
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="checkbox" value="1">
+        <label class="form-check-label" for="inlineCheckbox1">e-appointment</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="checkbox" value="2">
+        <label class="form-check-label" for="inlineCheckbox2">BTT</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="checkbox" value="3">
+        <label class="form-check-label" for="inlineCheckbox3">FTT</label>
+    </div>
+    <p>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" name="checkbox" value="4">
+        <label class="form-check-label" for="inlineCheckbox4">Simulator</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox5" name="checkbox" value="5">
+        <label class="form-check-label" for="inlineCheckbox5">Circuit</label>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </div>
+    </form>
+    </p>
+    <br>
+    <br>
+    <hr>
+    <div id="step">
+        Next Step --> <a href="/{{ step }}">{{ step }}</a>
+    </div>
+{% endblock %}
